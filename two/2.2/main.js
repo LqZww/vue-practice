@@ -15,7 +15,7 @@ var app = new Vue({
     //定义过滤器
     filters: {
         //这里的value就是需要过滤的数据
-        formatDate: function (value) {
+        formatDate: function (value, a, b) {
             //字符串转化为date类型
             var date = new Date(value)
             var year = date.getFullYear()
@@ -24,7 +24,7 @@ var app = new Vue({
             var hours = plusDate(date.getHours())
             var min = plusDate(date.getMinutes())
             var sec = plusDate(date.getSeconds())
-            return year + '-' + month + '-' + day + '   ' + hours + ':' + min + ':' + sec
+            return year + '-' + month + '-' + day + '   ' + hours + ':' + min + ':' + sec + a + b
         }
     },
     methods: {

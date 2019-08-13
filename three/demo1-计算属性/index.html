@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算属性</title>
+</head>
+
+<body>
+
+    <div id="demo">
+        {{text}}
+        <br>
+        <!-- 逻辑过长就会变得臃肿，难以维护，所以遇到复杂的逻辑时，应当使用计算属性 -->
+        {{text.split(',').reverse().join(',')}}
+        <br>
+        使用计算属性得到的:<br>
+        {{reverseText}}
+
+        <hr>
+        计算属性的缓存：<br>
+        {{now}}
+        <br>
+        通过methods拿到时间戳（方法需要加括号）:<br>
+        {{thisTime()}}
+
+
+    </div>
+
+
+
+
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+
+
+</body>
+
+</html>
