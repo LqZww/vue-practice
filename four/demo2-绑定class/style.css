@@ -1,0 +1,24 @@
+.divStyle {
+    background-color: darkred;
+    width: 100px;
+    height: 100px;
+}
+
+.borderStyle {
+    border: 10px solid green;
+}
+
+.btnBackground {
+    background-color: red;
+
+}
+
+.active {
+    background-color: grey;
+    width: 200px;
+    height: 200px;
+}
+
+.error {
+    border: 10px solid red;
+}
