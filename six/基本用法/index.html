@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本用法</title>
+</head>
+
+<body>
+
+    <div id="app" style="margin-bottom: 100px;">
+        Ⅰ、v-model的用法：用于在表单类元素上双向绑定事件<br>
+        一、input和textarea的用法：<br>
+        <input type="text" v-model="value">
+        {{value}}
+        <br>
+        <textarea name="" id="" cols="30" rows="5" v-model="msg">多行文本初始化值</textarea>
+        {{msg}}
+        <br>
+        注意：所显示的值只依赖所绑定的数据，不再关心初始化时插入的value
+        <hr>
+        二、单选框：<br>
+        ①单个单选按钮，直接用v-bind绑定一个布尔值<br>
+        单个单选框：<input type="radio" v-bind:checked="oneradio">
+        <br>
+        ②多个单选框，就需要v-model来配合value使用，绑定选中的单选框的value值<br>
+        多个单选框：<br>
+        1:<input type="radio" name="checks" value="1" v-model="checkname"><br>
+        2:<input type="radio" name="checks" value="2" v-model="checkname"><br>
+        3:<input type="radio" name="checks" value="3" v-model="checkname"><br>
+        ---现在选中的是{{checkname}}
+        <hr>
+        三、复选框<br>
+        ①单个复选框：直接用定一个布尔值，可以用v-model，也可以用v-bind<br>
+        <input type="checkbox" v-bind:checked="oneradio">
+        <input type="checkbox" v-model="oneradio">
+        <br>
+        ②多个复选框：就需要v-model来配合value使用，v-model绑定一个数组；如果绑定的是字符串，则会转化为true、false，与所有绑定的复选框的checked属性相对应<br>
+        1:<input type="checkbox" value="1" v-model="checks"><br>
+        2:<input type="checkbox" value="2" v-model="checks"><br>
+        3:<input type="checkbox" value="3" v-model="checks"><br>
+        ---现在选中的是{{checks}}
+        <hr>
+        四、下拉框<br>
+        ①单选的下拉框：
+        <select v-model="selected">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        现在选择的是{{selected}}
+        <br><br><br><br>
+        ②多选的下拉框：
+        <select v-model="selectedmul" multiple>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        现在选择的是{{selectedmul}}
+        <br>
+        注意：需要按住ctrl键<br>
+        总结：如果是单选，初始化最好给字符串；如果是多选，初始化最好给数组
+        <hr>
+        <hr>
+        Ⅱ、绑定值：<br>
+        单选按钮：
+        <input type="radio" v-model="picked" v-bind:value="value">
+        ---{{picked}}
+        <hr>
+        复选框：
+        <input type="checkbox" v-model="toggle" v-bind:true-value="value1" v-bind:false-value="value2">
+        <br>
+        {{toggle}}<br>
+        被选中：{{toggle == value1}}<br>
+        未被选中：{{toggle == value2}}
+        <hr>
+        下拉框：
+        <select v-model="valueselect">
+            <option v-bind:value="{num:111}">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        现在选择的是{{typeof valueselect}}---{{valueselect}}
+        <hr>
+        <hr>
+        Ⅲ、修饰符<br>
+        ①lazy：<br>
+        <input type="text" v-model="inputStr1">
+        ---{{inputStr1}}
+        <br>
+        <input type="text" v-model.lazy="inputStr2">
+        ---{{inputStr2}}
+        <br>
+        ②number：<br>
+        <input type="text" v-model.number="isNum">
+        {{typeof isNum}}
+        <br>
+        ③trim：自动过滤输入过程中首尾的空格<br>
+        <input type="text" v-model.trim="trimStr">
+        {{trimStr.split('').length}}
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
