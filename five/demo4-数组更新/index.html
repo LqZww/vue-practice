@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组更新</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-for="study in arr">{{study}}</div>
+
+        改变数组的一系列方法：<br>
+        ①push()：往数组的末尾新加一个元素<br>
+        ②pop()：把数组中的最后一个元素移除；pop方法返回的是移除的元素<br>
+        ③shift()：删除数组的第一个元素<br>
+        ④unshift()：在数组第一个位置添加元素，返回添加后的元素长度<br>
+        ⑤splice()：可以添加或删除函数，返回删除的元素<br>
+        有三个参数：第一个参数表示开始操作的位置；第二个参数表示要操作的长度；第三个为可选参数<br>
+        例如：<br>
+        app.arr.splice(1,1)//结果为删除pen并返回<br>
+        app.arr.splice(1,1)//结果为删除pencil并返回<br>
+        app.arr.splice(0,0,"alice")//在book前添加alice，并返回空<br>
+        ⑥sort()：排序
+        <button @click="sortArr">排序</button>
+        <br>
+        ⑦reverse()：
+        <button @click="reverseArr">数组反转</button>
+        <hr>
+        数组变动vue检测不到:<br>
+        ①改变数组的指定项
+        <button @click="changeOne">改变数组的指定项</button>
+        <br>
+        ②改变数组长度
+        <button @click="changeArrLength">改变数组长度</button>
+        <hr>
+        过滤：filter<br>
+        返回字符串中含有oo的项：<br>
+        {{matchOO}}
+
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

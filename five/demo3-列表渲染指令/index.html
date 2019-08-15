@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表渲染指令</title>
+</head>
+
+<body>
+
+    <div id="app">
+        v-for:一定要写在遍历的元素上<br>
+        用法：当需要将一个数组遍历或枚举一个对象属性的时候循环显示时，就会用到列表渲染指令<br>
+        使用场景：<br>
+        ①遍历多个对象:<br>
+        <ul>
+            <li v-for="vueMth in vueMethods">{{vueMth.name}}</li>
+        </ul>
+        <br>
+        带索引的写法：<br>
+        <ul>
+            <li v-for="(vueMth,index) in vueMethods">{{index}}--{{vueMth.name}}</li>
+        </ul>
+
+        ②遍历一个对象的多个属性:<br>
+        <span v-for="value in nvshen"> {{value}}</span>
+        <br>
+        拿到value、key、index的写法：<br>
+        <span v-for="(value,key,index) in nvshen">第{{index}}个--键是{{key}}--值是{{value}}<br></span>
+
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

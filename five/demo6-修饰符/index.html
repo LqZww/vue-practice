@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修饰符</title>
+</head>
+
+<body>
+
+    <div id="app">
+        stop用法:阻止单击事件向上冒泡
+        <div @click="divclick" style="width:100px;height:100px;background-color:yellow;">
+            <button @click.stop="btnclick">1</button>
+        </div>
+
+        <hr>
+        prevent用法:提交事件并且不重载页面
+        每次提交表单都会重载页面，添加prevent就不会重载
+        <form action="" @submit.prevent="hangle">
+            <button type="submit">提交</button>
+        </form>
+        <hr>
+        self用法:只是作用在元素本身而非子元素的时候调用
+        <div @click.self="divclick" style="width:100px;height:100px;background-color:yellow;">
+            <button @click="btnclick">1</button>
+        </div>
+        <hr>
+        once用法：只执行一次的方法<br>
+        <button @click="onceMethod">执行n次</button>
+        <button @click.once="onceMethod">执行1次</button>
+        <hr>
+        监听键盘事件：
+        <input @keyup.13="submitMe">
+        <br>
+        vuejs为我们提供了：.enter、.tab、.delete等等
+        <input @keyup.enter="submitMe">
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

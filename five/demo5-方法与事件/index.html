@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>方法与事件</title>
+</head>
+
+<body>
+
+    <div id="app">
+        点击次数：{{count}}
+        <br>
+        如果方法中带有参数，但是不加括号，默认传原生事件对象event<br>
+        <button @click="handle()">点击加1</button>
+        <button @click="handle(5)">点击加5</button>
+
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
