@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父组件给子组件传递数据props</title>
+</head>
+
+<body>
+    在父组件里向子组件传递消息：
+    1、在组件中使用props来从父组件接收参数，注意：在props中定义的属性，都可以在组件中直接使用
+    2、props来自父级，而组件中data return的数据就是组件自己的数据
+    <div id="app" style="border:1px solid red;height: 160px;">
+        <h5 style="text-align: center;">我是父组件</h5>
+        <br>
+        v-bind使用与否的区别，还可以使用布尔值，对象进行测试
+        <child-component msg="[3,6,9]"></child-component>
+        <child-component :msg="[3,6,9]"></child-component>
+        <hr>
+        使用v-bind进行数据的动态绑定：
+        <input type="text" v-model="parentmsg">
+        <bind-component :msg="parentmsg"></bind-component>
+
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

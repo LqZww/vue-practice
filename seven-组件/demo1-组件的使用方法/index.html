@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件的使用方法</title>
+</head>
+
+<body>
+
+    <div id="app" style="border: 10px solid red;">
+        <my-component></my-component>
+
+        vue组件的模板在某些情况下会受到html标签的限制，比如table中只能含有tr、td这些元素，所以直接在table中使用组件是无效的，此时可以使用is属性来挂载组件<br>
+        <table>
+            <tbody is="my-component"></tbody>
+        </table>
+    </div>
+
+
+    <div id="bpp" style="border: 10px solid green">
+        <my-component></my-component>
+        <app-component></app-component>
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

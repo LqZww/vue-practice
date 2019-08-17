@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件使用的注意事项</title>
+</head>
+
+<body>
+
+    <div id="app">
+        1、组件命名使用小写字母加-进行命名
+        <app-component></app-component>
+
+        2、template中的内容必须被一个DOM元素包括，也可以嵌套<br>
+
+        3、在组件的定义中，除了template之外还可以使用其他选项：data、computed、methods<br>
+
+        4、data必须是一个方法<br>
+
+        <button @click="plus">{{count}}</button>
+        <button @click="plus">{{count}}</button>
+        <br>
+        <btn-component></btn-component>
+        <btn-component></btn-component>
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
