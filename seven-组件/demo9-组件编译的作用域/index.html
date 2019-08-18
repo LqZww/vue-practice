@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件编译的作用域</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    message应该绑定到父组件的数据，还是绑定到子组件的数据？<br>
+    答案是父组件。<br>
+    <hr>
+    组件作用域简单地说是：<br>
+    父组件模板的内容在父组件作用域内编译<br>
+    子组件模板的内容在子组件作用域内编译
+    <div id="app">
+        <my-component v-show="childshow">
+        </my-component>
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

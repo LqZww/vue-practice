@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态组件使用方法</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>通过点击不同的按钮切换不同的视图：</h1>
+    VUE给我们提供了一个元素叫component<br>
+    作用是：用来动态的挂载不同的组件<br>
+    实现：使用is特性来进行实现的<br>
+    <div id="app">
+        <component :is="thisView"></component>
+        <button @click="handleView('A')">A</button>
+        <button @click="handleView('B')">B</button>
+        <button @click="handleView('C')">C</button>
+        <button @click="handleView('D')">D</button>
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

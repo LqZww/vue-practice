@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>访问slot</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    通过this.$slots.(name)
+    <div id="app">
+        <name-component>
+            <h2 slot="header"><span>标题</span></h2>
+            <p>正文1</p>
+            <p>正文2</p>
+            <p slot="footer">底部信息</p>
+        </name-component>
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

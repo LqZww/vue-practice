@@ -1,0 +1,10 @@
+#app {
+    border: 2px solid black;
+    width: 600px;
+    height: 500px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 3px;
+    margin: 0 auto;
+    margin-top: 100px;
+}

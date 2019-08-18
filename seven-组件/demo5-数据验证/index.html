@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据验证</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <b>vue组件中驼峰式命名与短横线命名：</b><br>
+    ①在html中，myMessage和mymessage是一致的，因此在html中使用组件必须使用短横线命名方式。在html中不允许使用驼峰式命名！！！<br>
+    ②在组件中，父组件给子组件传递数据必须用短横线。在template中必须使用驼峰式命名方式，若为短横线命名方式，会直接报错。<br>
+    ③在组件的data中，用this.xxx引用时，只能是驼峰式命名方式。若为短横线则报错。
+
+
+    <div id="app">
+        <my-component my-msg="哈哈哈"></my-component>
+        <hr>
+        验证的type类型可以是：
+        <ul>
+            <li>String</li>
+            <li>Number</li>
+            <li>Boolean</li>
+            <li>Object</li>
+            <li>Array</li>
+            <li>Function</li>
+        </ul>
+        <type-component v-bind:a="a" v-bind:b="b" v-bind:c="c" v-bind:d="d" v-bind:f="f" v-bind:g="g">
+        </type-component>
+
+
+    </div>
+
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
